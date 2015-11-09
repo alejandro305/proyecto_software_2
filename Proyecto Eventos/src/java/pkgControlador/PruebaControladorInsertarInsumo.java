@@ -38,6 +38,7 @@ public class PruebaControladorInsertarInsumo extends HttpServlet {
         PruebaConsulta con = new PruebaConsulta();
         con.insertarRegistroEnInsumos(nombre, medida);
         response.sendRedirect("index.jsp");
+        ///Esto es un comentario
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
