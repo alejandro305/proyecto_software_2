@@ -12,6 +12,10 @@
         <servlet-name>ControladorModificarInsumo</servlet-name>
         <servlet-class>pkgControlador.ControladorModificarInsumo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorListarInsumo</servlet-name>
+        <servlet-class>pkgControlador.ControladorListarInsumo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PruebaControladorInsertarInsumo</servlet-name>
         <url-pattern>/PruebaControladorInsertarInsumo</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ControladorModificarInsumo</servlet-name>
         <url-pattern>/ControladorModificarInsumo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorListarInsumo</servlet-name>
+        <url-pattern>/ControladorListarInsumo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -4,6 +4,7 @@
     Author     : Ambrosio
 --%>
 
+<%@page import="pkgControlador.ControladorListarInsumo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,10 +13,6 @@
         <title>Modificar insumo</title>
     </head>
     <body>
-        <h1>Insertar insumo</h1>
-        <form action="ControladorEliminarInsumo" method="">
-                <p><input type="text" name="id" id="id"/></p>
-                <p><input type="submit" name="eliminar" id="eliminar"/></p>
-        </form>
+        <%= ControladorListarInsumo.listar()%>
     </body>
 </html>

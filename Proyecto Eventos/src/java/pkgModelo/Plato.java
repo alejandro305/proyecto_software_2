@@ -11,9 +11,9 @@ import java.sql.ResultSet;
  *
  * @author Ambrosio
  */
-public class Insumo extends Conexion {
+public class Plato extends Conexion {
 
-    public Insumo() {
+    public Plato() {
         super();
     }
 
