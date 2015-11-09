@@ -34,9 +34,9 @@ public class Conexion {
             return;
         }
 
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String password = "123456";
-        String user = "postgres";
+        String url = "jdbc:postgresql://localhost:5432/EventosBD";
+        String password = "123654";
+        String user = "evt";
         try {
             Class.forName("org.postgresql.Driver");
 

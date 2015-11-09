@@ -12,6 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Insertar insumo</h1>
+        <form action="PruebaControladorInsertarInsumo" method="">
+                <p><input type="text" name="nombre" id="nombre"/></p>
+                <p><input type="text" name="medida" id="medida"/></p>
+                <p><input type="submit" name="ingresar" id="ingresar"/></p>
+        </form>
+        
     </body>
 </html>
