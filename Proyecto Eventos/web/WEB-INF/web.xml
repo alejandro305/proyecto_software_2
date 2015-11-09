@@ -2,11 +2,27 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>PruebaControladorInsertarInsumo</servlet-name>
-        <servlet-class>pkgControlador.PruebaControladorInsertarInsumo</servlet-class>
+        <servlet-class>pkgControlador.ControladorInsertarInsumo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorEliminarInsumo</servlet-name>
+        <servlet-class>pkgControlador.ControladorEliminarInsumo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorModificarInsumo</servlet-name>
+        <servlet-class>pkgControlador.ControladorModificarInsumo</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PruebaControladorInsertarInsumo</servlet-name>
         <url-pattern>/PruebaControladorInsertarInsumo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorEliminarInsumo</servlet-name>
+        <url-pattern>/ControladorEliminarInsumo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorModificarInsumo</servlet-name>
+        <url-pattern>/ControladorModificarInsumo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
