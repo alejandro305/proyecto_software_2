@@ -6,6 +6,7 @@
 package pkgModelo;
 
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
@@ -13,26 +14,30 @@ import java.sql.ResultSet;
  */
 public class Baja extends Conexion {
 
+    private Statement s2;
+    private Statement s3;
+
     public Baja() {
         super();
     }
 
-    public String ingresar(String nombre, String medida) {
+    public String ingresar(String insumo, String cantidad) {
         this.conectar();
         try {
             this.s = this.connection.createStatement();
-            int estado = s.executeUpdate("INSERT INTO insumos (nombre,medida) VALUES ('" + nombre + "','" + medida + "')");
+
+            int estado = s.executeUpdate("INSERT INTO bajas (id_insumo,cantidad) VALUES (" + insumo + "," + cantidad + ")");
             if (estado == 1) {
                 return "Se ingresó el registro de manera exitosa";
             } else {
                 return "Ocurrió un problema al ingresar el registro";
             }
+
         } catch (Exception e) {
             System.out.println("Error de conexion");
-            return "Error al intentar ingresar un nuevo insumo";
+            return "Error al intentar ingresar una nueva baja";
         }
     }
-
 
     public String eliminar(String id) {
         this.conectar();

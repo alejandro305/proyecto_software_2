@@ -9,13 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Insertar insumo</title>
+        <title>Insertar baja</title>
     </head>
     <body>
-        <h1>Insertar insumo</h1>
-        <form action="PruebaControladorInsertarInsumo" method="">
-                <p><input type="text" name="nombre" id="nombre"/></p>
-                <p><input type="text" name="medida" id="medida"/></p>
+        <h1>Insertar baja</h1>
+        <form action="ControladorInsertarBaja" method="">
+                <p><input type="number" name="insumo" id="insumo"/></p>
+                <p><input type="number" name="cantidad" id="cantidad"/></p>
                 <p><input type="submit" name="ingresar" id="ingresar"/></p>
         </form>
     </body>

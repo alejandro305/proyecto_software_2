@@ -36,6 +36,10 @@
         <servlet-name>ControladorEliminarBaja</servlet-name>
         <servlet-class>pkgControlador.ControladorEliminarBaja</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorInsertarBaja</servlet-name>
+        <servlet-class>pkgControlador.ControladorInsertarBaja</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PruebaControladorInsertarInsumo</servlet-name>
         <url-pattern>/PruebaControladorInsertarInsumo</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>ControladorEliminarBaja</servlet-name>
         <url-pattern>/ControladorEliminarBaja</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorInsertarBaja</servlet-name>
+        <url-pattern>/ControladorInsertarBaja</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
