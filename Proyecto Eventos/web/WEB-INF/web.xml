@@ -16,6 +16,26 @@
         <servlet-name>ControladorListarInsumo</servlet-name>
         <servlet-class>pkgControlador.ControladorListarInsumo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorInsertarPlato</servlet-name>
+        <servlet-class>pkgControlador.ControladorInsertarPlato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorModificarPlato</servlet-name>
+        <servlet-class>pkgControlador.ControladorModificarPlato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorListarPlato</servlet-name>
+        <servlet-class>pkgControlador.ControladorListarPlato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorInsertarAlta</servlet-name>
+        <servlet-class>pkgControlador.ControladorInsertarAlta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorEliminarBaja</servlet-name>
+        <servlet-class>pkgControlador.ControladorEliminarBaja</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PruebaControladorInsertarInsumo</servlet-name>
         <url-pattern>/PruebaControladorInsertarInsumo</url-pattern>
@@ -31,6 +51,26 @@
     <servlet-mapping>
         <servlet-name>ControladorListarInsumo</servlet-name>
         <url-pattern>/ControladorListarInsumo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorInsertarPlato</servlet-name>
+        <url-pattern>/ControladorInsertarPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorModificarPlato</servlet-name>
+        <url-pattern>/ControladorModificarPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorListarPlato</servlet-name>
+        <url-pattern>/ControladorListarPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorInsertarAlta</servlet-name>
+        <url-pattern>/ControladorInsertarAlta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorEliminarBaja</servlet-name>
+        <url-pattern>/ControladorEliminarBaja</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

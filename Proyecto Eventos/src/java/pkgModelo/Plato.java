@@ -17,11 +17,11 @@ public class Plato extends Conexion {
         super();
     }
 
-    public String ingresar(String nombre, String medida) {
+    public String ingresar(String descripcion,String nombre,String precio, String ingredientes) {
         this.conectar();
         try {
             this.s = this.connection.createStatement();
-            int estado = s.executeUpdate("INSERT INTO insumos (nombre,medida) VALUES ('" + nombre + "','" + medida + "')");
+            int estado = s.executeUpdate("INSERT INTO platos (descripcion,nombre,precio,ingredientes) VALUES ('" + descripcion + "','" + nombre + "'," + precio + ",'" + ingredientes + "')");
             if (estado == 1) {
                 return "Se ingresó el registro de manera exitosa";
             } else {
@@ -29,15 +29,15 @@ public class Plato extends Conexion {
             }
         } catch (Exception e) {
             System.out.println("Error de conexion");
-            return "Error al intentar ingresar un nuevo insumo";
+            return "Error al intentar ingresar un nuevo plato";
         }
     }
 
-    public String modificar(String id, String nombre, String medida) {
+    public String modificar(String id, String descripcion,String nombre,String precio, String ingredientes) {
         this.conectar();
         try {
             this.s = this.connection.createStatement();
-            int estado = s.executeUpdate("UPDATE insumos SET nombre='" + nombre + "', medida='" + medida + "' where id=" + id + ";");
+            int estado = s.executeUpdate("UPDATE platos SET descripcion='" + descripcion + "',nombre='" + nombre + "',precio=" + precio + ",ingredientes='" + ingredientes + "' where id=" + id + ";");
             if (estado == 1) {
                 return "Se modificó el registro de manera exitosa";
             } else {
@@ -49,21 +49,7 @@ public class Plato extends Conexion {
         }
     }
 
-    public String eliminar(String id) {
-        this.conectar();
-        try {
-            this.s = this.connection.createStatement();
-            int estado = s.executeUpdate("DELETE FROM insumos WHERE id=" + id + ";");
-            if (estado == 1) {
-                return "Se eliminó el registro de manera exitosa";
-            } else {
-                return "Ocurrió un problema al eliminar el registro";
-            }
-        } catch (Exception e) {
-            System.out.println("Error de conexion");
-            return "Error al intentar eliminar un insumo";
-        }
-    }
+
 
     public String listar() {
         this.conectar();
@@ -71,17 +57,21 @@ public class Plato extends Conexion {
         try {
             this.s = this.connection.createStatement();
 
-            ResultSet res = s.executeQuery("SELECT id,nombre,medida FROM insumos");
+            ResultSet res = s.executeQuery("SELECT id,descripcion, nombre,precio,ingredientes FROM platos");
             str = "<table border='1' style='width:100%'><tr>\n"
                     + "    <th>id</th>\n"
+                    + "    <th>descripcion</th>\n"
                     + "    <th>nombre</th>\n"
-                    + "    <th>medida</th>\n"
+                    + "    <th>precio</th>\n"
+                    + "    <th>ingredientes</th>\n"
                     + "  </tr>";
             while (res.next()) {
                 str += "<tr>\n"
                         + "    <td>" + res.getString("id") + "</td>\n"
+                        + "    <td>" + res.getString("descripcion") + "</td>\n"
                         + "    <td>" + res.getString("nombre") + "</td>\n"
-                        + "    <td>" + res.getString("medida") + "</td>\n"
+                        + "    <td>" + res.getString("precio") + "</td>\n"
+                        + "    <td>" + res.getString("ingredientes") + "</td>\n"
                         + "  </tr>";
             }
             str += "</table> ";

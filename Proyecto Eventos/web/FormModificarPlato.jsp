@@ -9,14 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modificar insumo</title>
+        <title>Modificar plato</title>
     </head>
     <body>
-        <h1>Modificar insumo</h1>
-        <form action="ControladorModificarInsumo" method="">
+        <h1>Modificar plato</h1>
+        <form action="ControladorModificarPlato" method="">
                 <p><input type="text" name="id" id="id"/></p>
+                <p><input type="text" name="descripcion" id="descripcion"/></p>
                 <p><input type="text" name="nombre" id="nombre"/></p>
-                <p><input type="text" name="medida" id="medida"/></p>
+                <p><input type="number" name="precio" id="precio"/></p>
+                <p><input type="text" name="ingredientes" id="ingredientes"/></p>
                 <p><input type="submit" name="modificar" id="modificar"/></p>
         </form>
     </body>
