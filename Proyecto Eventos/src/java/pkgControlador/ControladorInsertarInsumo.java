@@ -34,10 +34,13 @@ public class ControladorInsertarInsumo extends HttpServlet {
 
         String nombre = request.getParameter("nombre");
         String medida = request.getParameter("medida");
+        System.out.println(nombre+" "+medida);
+        
 
         Insumo insumo = new Insumo();
         String titulo = "Ingreso de insumo";
         String contenido = insumo.ingresar(nombre, medida);
+        response.sendRedirect("FormInsertarInsumo.jsp");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
