@@ -31,7 +31,7 @@ public class ControladorInsertarInsumo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        System.out.println("Se uso serblet Insertar Insumo");
         String nombre = request.getParameter("nombre");
         String medida = request.getParameter("medida");
         System.out.println(nombre+" "+medida);

@@ -8,20 +8,16 @@
 $(document).ready(
         function () {
             $('#ingresar').click(function () {
-                var nombre = $('#nombre').val();
-                var medida = $('#medida').val();
-                //alert(nombre+medida);
+                nombre = $('#nombre').val();
+                medida = $('#medida').val();
+                //alert(nombre+" "+ medida);
                 $.ajax({
-                    data: {
-                       nombre:nombre,
-                       medida:medida
-                    } ,
-                    url: "/PruebaControladorInsertarInsumo",
-                    type: 'POST',
+                    data: {nombre: nombre, medida: medida},
+                    url: 'PruebaControladorInsertarInsumo',
+                    type: 'post',
                     success: function (response) {
-                        $("#contenedor").html(response);
+                        location.reload();
                     }
-                    
                 });
             });
         }
