@@ -13,13 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pkgModelo.Pedido;
-import pkgModelo.Plato;
 
 /**
  *
- * @author Sebas
+ * @author Ambrosio
  */
-public class ControladorRegistrarPedido extends HttpServlet {
+public class ControladorAprovarPedidos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,44 +32,39 @@ public class ControladorRegistrarPedido extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int total = Integer.parseInt(request.getParameter("total"));
-        Plato plato = new Plato();
+        int operacion = Integer.parseInt(request.getParameter("operacion"));
         Pedido pedido = new Pedido();
-        if (total == -1) {
-            Pedido pedidoEnBlanco = new Pedido();
-            int id = pedidoEnBlanco.ingresarBlancoObteniedoId();
-            response.getWriter().write(id + "");
-            System.out.println(id);
-        } else if (total == -2) {
+        if(operacion == 1){
+            String tabla = pedido.listarPedidosPendientes();
+            response.getWriter().write(tabla);
+        }else if(operacion == 2){
+            LinkedList<Integer> ids = pedido.listarIdentificadoresDePedidos();
 
-            LinkedList<String> nombre = plato.listarNombresPLatos();
-
-            String combobox = "<select id=\"cmbPlatos\">\n<option value=\"\"></option>";
-            for (String nombre1 : nombre) {
-                combobox += "<option value=\"" + nombre1 + "\">" + nombre1 + "</option>";
+            String combobox = "<select id=\"cmbIDPlatos\">\n<option value=\"\"></option>";
+            for (int id : ids) {
+                combobox += "<option value=\"" + id + "\">" + id + "</option>";
             }
             combobox += "</select>";
             response.getWriter().write(combobox);
-        } else if (total == -3) {
-            int idPedido = Integer.parseInt(request.getParameter("idPedido"));
-            int valorTotalPedido = Integer.parseInt(request.getParameter("valorTotalPedido"));
-            pedido.modificarValorPedido(idPedido, valorTotalPedido);
+        }else if(operacion == 3){
+            String estado = request.getParameter("estado");
+            int id = Integer.parseInt(request.getParameter("id"));
+            pedido.modificarEstadoPedido(id, estado);
             pedido.eliminarPedidosInvalidos();
-
-        } else {
-            int idPedido = Integer.parseInt(request.getParameter("idPerdido"));
-            String nombrePlato = request.getParameter("nombrePlato");
-            int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-            System.out.println(idPedido + "" + nombrePlato + "" + cantidad);
-
-            int[] datosPlato = plato.obtenerPrecioDePlato(nombrePlato);
-            int precioTotal = datosPlato[1] * cantidad;
-
-            pedido.insertarPedidoPlato(idPedido, datosPlato[0], precioTotal);
-            response.getWriter().write(precioTotal + "");
         }
         
-        
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet ControladorAprovarPedidos</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>Servlet ControladorAprovarPedidos at " + request.getContextPath() + "</h1>");
+//            out.println("</body>");
+//            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

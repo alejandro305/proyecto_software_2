@@ -28,8 +28,8 @@
         <a href="FormModificarPlato.jsp"><button id="btnRedirectModificarPlato" value="Modificar Plato">Modificar Plato</button></a>
         <a href="FormRegistrarPedido.jsp"><button id="btnRedirectRegistrarPedido" value="Registrar pedido">Registrar pedido</button></a>
 <<<<<<< HEAD
-         <a href="FormEliminarPedido.jsp"><button id="btnRedirectEliminarPedido" value="Eliminar pedido">Eliminar pedido</button></a>
-         <a href="FormModificarPedido.jsp"><button id="btnRedirectModificarPedido" value="Modificar pedido">Modificar pedido</button></a>
+        <a href="FormAprobarPedidos.jsp"><button id="btnRedirectAprobarPedidos" value="Aprobar Pedidos">Aprobar pedidos</button></a>
+        
 =======
         <a href="FormEliminarPedido.jsp"><button id="btnRedirectEliminarPedido" value="Eliminar Pedido">Eliminar Pedido</button></a>
 
