@@ -7,7 +7,7 @@
 $(document).ready(function () {
     var idPedido;
     var valorTotalPedido = 0;
-    $("#valorPedido").html('<h1>TOTAL: $'+valorTotalPedido+'</h1>');
+    $("#valorPedido").html('<h1>TOTAL: $' + valorTotalPedido + '</h1>');
 
 
     $.ajax({
@@ -28,33 +28,39 @@ $(document).ready(function () {
             });
         }
     });
-    
-    $("#adicionarAlPedido").click(function (){
+
+    $("#adicionarAlPedido").click(function () {
+
         var nombrePlato = $("#cmbPlatos").val();
         var cantidad = $("#cantidad").val();
-        $.ajax({
-                data: {total: 0 ,idPerdido: idPedido, nombrePlato: nombrePlato, cantidad: cantidad},
+        if (nombrePlato != "" && cantidad != "") {
+            $.ajax({
+                data: {total: 0, idPerdido: idPedido, nombrePlato: nombrePlato, cantidad: cantidad},
                 url: 'ControladorRegistrarPedido',
                 type: 'post',
                 success: function (response) {
                     var valor = parseInt(response);
-                    var datos = nombrePlato+"   "+cantidad+"    $"+valor+"</br>";
+                    var datos = nombrePlato + "   " + cantidad + "    $" + valor + "</br>";
                     $('#platosSeleccionados').append(datos);
-                    valorTotalPedido = valorTotalPedido+valor;
-                    $("#valorPedido").html('<h1>TOTAL: $'+valorTotalPedido+'</h1>');
+                    valorTotalPedido = valorTotalPedido + valor;
+                    $("#valorPedido").html('<h1>TOTAL: $' + valorTotalPedido + '</h1>');
                 }
             });
+        }else{
+            alert("Debe llenar todos los campos");
+        }
+
     });
-    
-    $("#AceptarPedido").click(function (){
+
+    $("#AceptarPedido").click(function () {
         $.ajax({
-                data: {total: -3 ,idPedido: idPedido, valorTotalPedido: valorTotalPedido},
-                url: 'ControladorRegistrarPedido',
-                type: 'post',
-                success: function () {
-                    window.location = "index.jsp";
-                }
-            });
+            data: {total: -3, idPedido: idPedido, valorTotalPedido: valorTotalPedido},
+            url: 'ControladorRegistrarPedido',
+            type: 'post',
+            success: function () {
+                window.location = "index.jsp";
+            }
+        });
     });
 
 

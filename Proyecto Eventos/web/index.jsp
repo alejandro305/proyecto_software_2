@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/index.js"></script>
+        <link href="css/boostrap3/css/bootstrap.css" type="text/css" rel="stylesheet">
         <title>JSP Page</title>
     </head>
     <body>
