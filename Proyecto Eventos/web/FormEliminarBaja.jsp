@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Eliminar insumo</title>
+        <title>Eliminar Baja</title>
     </head>
     <body>
-        <h1>Eliminar insumo</h1>
+        <h1>Eliminar Baja</h1>
         <form action="ControladorEliminarBaja" method="">
                 <p>id: <input type="text" name="id" id="id"/></p>
                 <p><input type="submit" name="eliminar" id="eliminar"/></p>

@@ -26,6 +26,7 @@
         <a href="FormModificarInsumo.jsp"><button id="btnRedirectModificarInsumo" value="Modificar Insumo">Modificar Insumo</button></a>
         <a href="FormModificarPlato.jsp"><button id="btnRedirectModificarPlato" value="Modificar Plato">Modificar Plato</button></a>
         <a href="FormRegistrarPedido.jsp"><button id="btnRedirectRegistrarPedido" value="Registrar pedido">Registrar pedido</button></a>
-        
+        <a href="FormEliminarPedido.jsp"><button id="btnRedirectEliminarPedido" value="Eliminar Pedido">Eliminar Pedido</button></a>
+
     </body>
 </html>

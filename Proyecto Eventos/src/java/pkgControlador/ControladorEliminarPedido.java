@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pkgControlador;
 
 import java.io.IOException;
@@ -12,13 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import pkgModelo.Insumo;
+import pkgModelo.Pedido;
 
 /**
  *
- * @author Alexis
+ * @author Hon
  */
-public class ControladorEliminarInsumo extends HttpServlet {
+public class ControladorEliminarPedido extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,12 +30,14 @@ public class ControladorEliminarInsumo extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("id");
-        System.out.println(id);
-        Insumo insumo = new Insumo();
-        String titulo = "Eliminar insumo";
-        String contenido = insumo.eliminar(id);
+
+        Pedido Pedido = new Pedido();
+        String titulo = "Eliminar Pedido";
+        String contenido = Pedido.eliminar(id);
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
