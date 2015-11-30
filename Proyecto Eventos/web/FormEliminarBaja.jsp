@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Eliminar Baja</title>
+        <link href="css/boostrap3/css/bootstrap.css" type="text/css" rel="stylesheet">
+        <title>Eliminar insumo</title>
     </head>
     <body>
         <h1>Eliminar Baja</h1>
