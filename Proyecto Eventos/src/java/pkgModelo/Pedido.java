@@ -81,22 +81,6 @@ public class Pedido extends Conexion {
 
     
     
-    public String eliminar(String id) {
-        this.conectar();
-        try {
-            this.s = this.connection.createStatement();
-            int estado = s.executeUpdate("DELETE FROM pedidos WHERE id=" + id + ";");
-            if (estado == 1) {
-                return "Se eliminó el registro de manera exitosa";
-            } else {
-                return "Ocurrió un problema al eliminar el registro";
-            }
-        } catch (Exception e) {
-            System.out.println("Error de conexion");
-            return "Error al intentar eliminar un insumo";
-        }
-    }
-    
     
     
     
