@@ -1,21 +1,36 @@
 <%-- 
+<<<<<<< HEAD
+    Document   : FormEliminarPedido
+    Created on : 29-nov-2015, 23:09:04
+    Author     : Alejandro
+=======
     Document   : index
     Created on : 30-nov-2015, 30-11-2015
     Author     : Hon
+>>>>>>> e4f8f0f06d29f7a38e9126990e274c8726d9290d
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD
+        <head>
+=======
+>>>>>>> e4f8f0f06d29f7a38e9126990e274c8726d9290d
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Eliminar Pedido</title>
     </head>
     <body>
         <h1>Eliminar Pedido</h1>
         <form action="ControladorEliminarPedido" method="">
+<<<<<<< HEAD
+                <p>id: <input type="text" name="id" id="id"/></p>
+                <p><input type="submit" name="eliminar" id="eliminar"/></p>
+=======
             <p>id: <input type="text" name="id" id="id"/></p>
             <p><input type="submit" name="eliminar" id="eliminar"/></p>
+>>>>>>> e4f8f0f06d29f7a38e9126990e274c8726d9290d
         </form>
     </body>
 </html>

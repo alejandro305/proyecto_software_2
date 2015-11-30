@@ -33,7 +33,7 @@ public class ControladorEliminarInsumo extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("id");
-
+        System.out.println(id);
         Insumo insumo = new Insumo();
         String titulo = "Eliminar insumo";
         String contenido = insumo.eliminar(id);
