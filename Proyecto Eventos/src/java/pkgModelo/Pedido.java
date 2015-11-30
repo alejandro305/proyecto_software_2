@@ -94,6 +94,12 @@ public class Pedido extends Conexion {
         }
     }
 
+    
+    
+    
+    
+    
+    
     public void modificarValorPedido(int id, int valor) {
 
         this.conectar();
