@@ -159,4 +159,35 @@ public class Pedido extends Conexion {
         }
     }
 
+    public void ingresar(int total) {
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            int estado = s.executeUpdate("INSERT INTO pedidos (costo_final) VALUES ('" + total + "')");
+            if (estado == 1) {
+                System.out.println("Se ingresó el registro de manera exitosa");
+            } else {
+                System.out.println("Ocurrió un problema al ingresar el registro");
+            }
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+        }
+    }
+
+    public String eliminar(String id) {
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            int estado = s.executeUpdate("DELETE FROM pedidos WHERE id=" + id + ";");
+            if (estado == 1) {
+                return "Se eliminó el registro de manera exitosa";
+            } else {
+                return "Ocurrió un problema al eliminar el registro";
+            }
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+            return "Error al intentar eliminar un pedido";
+        }
+    }
+
 }
