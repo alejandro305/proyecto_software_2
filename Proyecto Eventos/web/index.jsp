@@ -30,6 +30,7 @@
         <a href="FormAprobarPedidos.jsp"><button id="btnRedirectAprobarPedidos" value="Aprobar Pedidos">Aprobar pedidos</button></a>
         <a href="FormEliminarPedido.jsp"><button id="btnRedirectEliminarPedido" value="Eliminar Pedido">Eliminar Pedido</button></a>
         <a href="FormListarPedidos.jsp"><button id="btnRedirectListarPedidos" value="ListarPedidos">Listar pedidos</button></a>
+        <a href="FormModificarPedido.jsp"><button id="btnRedirectModificarPedido" value="ModificarPedido">Modificar pedido</button></a>
 
     </body>
 </html>

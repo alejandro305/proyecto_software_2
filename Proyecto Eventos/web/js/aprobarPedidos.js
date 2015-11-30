@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     function cargarComponentes() {
-
         $.ajax({
             data: {operacion: 1},
             url: 'ControladorAprovarPedidos',
@@ -10,21 +9,12 @@ $(document).ready(function () {
                 //alert(response);
                 $('#tablaPendientes').html(response);
                 $.ajax({
-                    data: {total: -1},
-                    url: 'ControladorRegistrarPedido',
+                    data: {operacion: 2},
+                    url: 'ControladorAprovarPedidos',
                     type: 'post',
                     success: function (response) {
                         idPedido = response;
-                        $.ajax({
-                            data: {operacion: 2},
-                            url: 'ControladorAprovarPedidos',
-                            type: 'post',
-                            success: function (response) {
-                                //alert(response);
-                                $('#pedidosPendientes').html(response);
-
-                            }
-                        });
+                        $('#pedidosPendientes').html(response);
                     }
                 });
 

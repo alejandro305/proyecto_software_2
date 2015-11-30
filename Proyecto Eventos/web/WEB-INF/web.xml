@@ -60,6 +60,10 @@
         <servlet-name>ControladorListarPedidos</servlet-name>
         <servlet-class>pkgControlador.ControladorListarPedidos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorModificarPedido</servlet-name>
+        <servlet-class>pkgControlador.ControladorModificarPedido</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PruebaControladorInsertarInsumo</servlet-name>
         <url-pattern>/PruebaControladorInsertarInsumo</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>ControladorListarPedidos</servlet-name>
         <url-pattern>/ControladorListarPedidos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorModificarPedido</servlet-name>
+        <url-pattern>/ControladorModificarPedido</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

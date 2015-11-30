@@ -18,7 +18,7 @@ import pkgModelo.Pedido;
  *
  * @author Ambrosio
  */
-public class ControladorAprovarPedidos extends HttpServlet {
+public class ControladorModificarPedido extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,34 +34,33 @@ public class ControladorAprovarPedidos extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         int operacion = Integer.parseInt(request.getParameter("operacion"));
         Pedido pedido = new Pedido();
-        if(operacion == 1){
+        if (operacion == 1) {
             String tabla = pedido.listarPedidosPendientes();
             response.getWriter().write(tabla);
-        }else if(operacion == 2){
-            LinkedList<Integer> ids = pedido.listarIdentificadoresDePedidosEnEspera();
+        } else if (operacion == 2) {
+            LinkedList<Integer> ids = pedido.listarIdentificadoresDePedidos();
 
-            String combobox = "<select id=\"cmbIDPlatos\">\n<option value=\"\"></option>";
+            String combobox = "<select id=\"cmbIDpedidos\">\n<option value=\"\"></option>";
             for (int id : ids) {
                 combobox += "<option value=\"" + id + "\">" + id + "</option>";
             }
             combobox += "</select>";
             response.getWriter().write(combobox);
-        }else if(operacion == 3){
-            String estado = request.getParameter("estado");
+        } else if (operacion == 3) {
+            int valor = Integer.parseInt(request.getParameter("valor"));
             int id = Integer.parseInt(request.getParameter("id"));
-            pedido.modificarEstadoPedido(id, estado);
+            pedido.modificarValorPedido(id, valor);
             pedido.eliminarPedidosInvalidos();
         }
-        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 //            out.println("<!DOCTYPE html>");
 //            out.println("<html>");
 //            out.println("<head>");
-//            out.println("<title>Servlet ControladorAprovarPedidos</title>");            
+//            out.println("<title>Servlet ControladorModificarPedido</title>");            
 //            out.println("</head>");
 //            out.println("<body>");
-//            out.println("<h1>Servlet ControladorAprovarPedidos at " + request.getContextPath() + "</h1>");
+//            out.println("<h1>Servlet ControladorModificarPedido at " + request.getContextPath() + "</h1>");
 //            out.println("</body>");
 //            out.println("</html>");
         }

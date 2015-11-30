@@ -17,6 +17,7 @@ public class Pedido extends Conexion {
     public Pedido() {
         super();
     }
+
     public String listarPedidosPendientes() {
         String tabla = "";
         this.conectar();
@@ -36,8 +37,6 @@ public class Pedido extends Conexion {
                         + "  </tr>";
             }
             tabla += "</table> ";
-            
-            
 
         } catch (Exception e) {
             System.out.println("Error de conexion");
@@ -45,8 +44,8 @@ public class Pedido extends Conexion {
         }
         return tabla;
     }
-    
-    public LinkedList<Integer> listarIdentificadoresDePedidos() {
+
+    public LinkedList<Integer> listarIdentificadoresDePedidosEnEspera() {
         LinkedList<Integer> identificadores = new LinkedList<>();
         this.conectar();
         try {
@@ -55,7 +54,23 @@ public class Pedido extends Conexion {
             while (res.next()) {
                 identificadores.add(Integer.parseInt(res.getString("id")));
             }
-            
+
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+
+        }
+        return identificadores;
+    }
+
+    public LinkedList<Integer> listarIdentificadoresDePedidos() {
+        LinkedList<Integer> identificadores = new LinkedList<>();
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            ResultSet res = s.executeQuery("SELECT id FROM pedidos WHERE costo_final > -1");
+            while (res.next()) {
+                identificadores.add(Integer.parseInt(res.getString("id")));
+            }
 
         } catch (Exception e) {
             System.out.println("Error de conexion");
@@ -94,6 +109,7 @@ public class Pedido extends Conexion {
             System.out.println("Error de conexion");
         }
     }
+
     public void modificarEstadoPedido(int id, String estadoPedido) {
 
         this.conectar();
@@ -143,8 +159,8 @@ public class Pedido extends Conexion {
         }
         return -1;
     }
-    
-    public void eliminarPedidosInvalidos(){
+
+    public void eliminarPedidosInvalidos() {
         this.conectar();
         try {
             this.s = this.connection.createStatement();
