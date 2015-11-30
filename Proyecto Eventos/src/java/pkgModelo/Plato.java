@@ -6,6 +6,7 @@
 package pkgModelo;
 
 import java.sql.ResultSet;
+import java.util.LinkedList;
 
 /**
  *
@@ -16,8 +17,26 @@ public class Plato extends Conexion {
     public Plato() {
         super();
     }
+    
+    public int[] obtenerPrecioDePlato(String nombre){
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            ResultSet res = s.executeQuery("SELECT id, precio FROM platos WHERE nombre = '"+nombre+"';");
+            res.next();
+            int[] precioPlato = new int[2];
+            precioPlato[0] = res.getInt("id");
+            precioPlato[1] = res.getInt("precio");
+            return precioPlato;
 
-    public String ingresar(String descripcion,String nombre,String precio, String ingredientes) {
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+        }
+        return null;
+        
+    }
+    
+    public String ingresar(String descripcion, String nombre, String precio, String ingredientes) {
         this.conectar();
         try {
             this.s = this.connection.createStatement();
@@ -33,7 +52,7 @@ public class Plato extends Conexion {
         }
     }
 
-    public String modificar(String id, String descripcion,String nombre,String precio, String ingredientes) {
+    public String modificar(String id, String descripcion, String nombre, String precio, String ingredientes) {
         this.conectar();
         try {
             this.s = this.connection.createStatement();
@@ -49,11 +68,29 @@ public class Plato extends Conexion {
         }
     }
 
+    public LinkedList<String> listarNombresPLatos() {
+        this.conectar();
+        LinkedList<String> str = new LinkedList<>();
+        try {
+            this.s = this.connection.createStatement();
 
+            ResultSet res = s.executeQuery("SELECT nombre FROM platos");
+
+            while (res.next()) {
+                str.add(res.getString("nombre"));
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+
+        }
+        return str;
+
+    }
 
     public String listar() {
         this.conectar();
-        String str="";
+        String str = "";
         try {
             this.s = this.connection.createStatement();
 

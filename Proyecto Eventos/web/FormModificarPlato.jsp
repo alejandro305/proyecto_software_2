@@ -14,9 +14,9 @@
     <body>
         <h1>Modificar plato</h1>
         <form action="ControladorModificarPlato" method="">
-                <p><input type="text" name="id" id="id"/></p>
-                <p><input type="text" name="descripcion" id="descripcion"/></p>
-                <p><input type="text" name="nombre" id="nombre"/></p>
+                <p>id: <input type="text" name="id" id="id"/></p>
+                <p>descripcion: <input type="text" name="descripcion" id="descripcion"/></p>
+                <p>nombre: <input type="text" name="nombre" id="nombre"/></p>
                 <p><input type="number" name="precio" id="precio"/></p>
                 <p><input type="text" name="ingredientes" id="ingredientes"/></p>
                 <p><input type="submit" name="modificar" id="modificar"/></p>

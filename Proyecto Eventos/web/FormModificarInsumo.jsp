@@ -14,9 +14,9 @@
     <body>
         <h1>Modificar insumo</h1>
         <form action="ControladorModificarInsumo" method="">
-                <p><input type="text" name="id" id="id"/></p>
-                <p><input type="text" name="nombre" id="nombre"/></p>
-                <p><input type="text" name="medida" id="medida"/></p>
+                <p>identificador: <input type="text" name="id" id="id"/></p>
+                <p>nombre: <input type="text" name="nombre" id="nombre"/></p>
+                <p>medida: <input type="text" name="medida" id="medida"/></p>
                 <p><input type="submit" name="modificar" id="modificar"/></p>
         </form>
     </body>

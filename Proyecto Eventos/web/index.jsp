@@ -15,16 +15,17 @@
     </head>
     <body>
         <h1>Menu</h1>
-        <a href="FormEliminarBaja.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Eliminar Baja</button></a>
-        <a href="FormEliminarInsumo.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Eliminar Insumo</button></a>
-        <a href="FormInsertarAlta.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Insertar Baja</button></a>
-        <a href="FormInsertarBaja.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Insertar Alta</button></a>
-        <a href="FormInsertarInsumo.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Insertar Insumo</button></a>
-        <a href="FormInsertarPlato.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Insertar Plato</button></a>
-        <a href="FormListarInsumo.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Listar Insumo</button></a>
-        <a href="FormListarPlato.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Lista Plato</button></a>
-        <a href="FormModificarInsumo.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Modificar Insumo</button></a>
-        <a href="FormModificarPlato.jsp"><button id="btnRedirectInsumo" value="Gestion Insumo">Modificar Plato</button></a>
+        <a href="FormEliminarBaja.jsp"><button id="btnRedirectEliminarBaja" value="Eliminar Baja">Eliminar Baja</button></a>
+        <a href="FormEliminarInsumo.jsp"><button id="btnRedirectEliminarInsumo" value="Eliminar Insumo">Eliminar Insumo</button></a>
+        <a href="FormInsertarAlta.jsp"><button id="btnRedirectInsertarAlta" value="Insertar Baja">Insertar Baja</button></a>
+        <a href="FormInsertarBaja.jsp"><button id="btnRedirectInsertarBaja" value="Insertar Alta">Insertar Alta</button></a>
+        <a href="FormInsertarInsumo.jsp"><button id="btnRedirectInsertarInsumo" value="Insertar Insumo">Insertar Insumo</button></a>
+        <a href="FormInsertarPlato.jsp"><button id="btnRedirectInsertarPlato" value="Insertar Plato">Insertar Plato</button></a>
+        <a href="FormListarInsumo.jsp"><button id="btnRedirectListarInsumo" value="Listar Insumo">Listar Insumo</button></a>
+        <a href="FormListarPlato.jsp"><button id="btnRedirectListarPlato" value="Lista Plato">Lista Plato</button></a>
+        <a href="FormModificarInsumo.jsp"><button id="btnRedirectModificarInsumo" value="Modificar Insumo">Modificar Insumo</button></a>
+        <a href="FormModificarPlato.jsp"><button id="btnRedirectModificarPlato" value="Modificar Plato">Modificar Plato</button></a>
+        <a href="FormRegistrarPedido.jsp"><button id="btnRedirectRegistrarPedido" value="Registrar pedido">Registrar pedido</button></a>
         
     </body>
 </html>

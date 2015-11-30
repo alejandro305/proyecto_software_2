@@ -44,6 +44,10 @@
         <servlet-name>Redireccion</servlet-name>
         <servlet-class>pkgControlador.Redireccion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorRegistrarPedido</servlet-name>
+        <servlet-class>pkgControlador.ControladorRegistrarPedido</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PruebaControladorInsertarInsumo</servlet-name>
         <url-pattern>/PruebaControladorInsertarInsumo</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>Redireccion</servlet-name>
         <url-pattern>/Redireccion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorRegistrarPedido</servlet-name>
+        <url-pattern>/ControladorRegistrarPedido</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -14,7 +14,7 @@
     <body>
         <h1>Eliminar insumo</h1>
         <form action="ControladorEliminarInsumo" method="">
-                <p><input type="text" name="id" id="id"/></p>
+                <p>id: <input type="text" name="id" id="id"/></p>
                 <p><input type="submit" name="eliminar" id="eliminar"/></p>
         </form>
     </body>

@@ -14,8 +14,8 @@
     <body>
         <h1>Insertar baja</h1>
         <form action="ControladorInsertarBaja" method="">
-                <p><input type="number" name="insumo" id="insumo"/></p>
-                <p><input type="number" name="cantidad" id="cantidad"/></p>
+                <p>insumo: <input type="number" name="insumo" id="insumo"/></p>
+                <p>cantidad: <input type="number" name="cantidad" id="cantidad"/></p>
                 <p><input type="submit" name="ingresar" id="ingresar"/></p>
         </form>
     </body>
