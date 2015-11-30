@@ -6,6 +6,7 @@
 package pkgModelo;
 
 import java.sql.ResultSet;
+import java.util.LinkedList;
 
 /**
  *
@@ -15,6 +16,52 @@ public class Pedido extends Conexion {
 
     public Pedido() {
         super();
+    }
+    public String listarPedidosPendientes() {
+        String tabla = "";
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            ResultSet res = s.executeQuery("SELECT id,costo_final,estado FROM pedidos WHERE  costo_final > -1");
+            tabla = "<table border='1' style='width:100%'><tr>\n"
+                    + "    <th>id</th>\n"
+                    + "    <th>costo_final</th>\n"
+                    + "    <th>estado</th>\n"
+                    + "  </tr>";
+            while (res.next()) {
+                tabla += "<tr>\n"
+                        + "    <td>" + res.getString("id") + "</td>\n"
+                        + "    <td>$" + res.getString("costo_final") + "</td>\n"
+                        + "    <td>" + res.getString("estado") + "</td>\n"
+                        + "  </tr>";
+            }
+            tabla += "</table> ";
+            
+            
+
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+
+        }
+        return tabla;
+    }
+    
+    public LinkedList<Integer> listarIdentificadoresDePedidos() {
+        LinkedList<Integer> identificadores = new LinkedList<>();
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            ResultSet res = s.executeQuery("SELECT id FROM pedidos WHERE  UPPER(estado) = 'ESPERA' and costo_final > -1");
+            while (res.next()) {
+                identificadores.add(Integer.parseInt(res.getString("id")));
+            }
+            
+
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+
+        }
+        return identificadores;
     }
 
     public void insertarPedidoPlato(int idPedido, int idPlato, int valor) {
@@ -32,12 +79,27 @@ public class Pedido extends Conexion {
         }
     }
 
-    public void modificarPedido(int id, int valor) {
+    public void modificarValorPedido(int id, int valor) {
 
         this.conectar();
         try {
             this.s = this.connection.createStatement();
             int estado = s.executeUpdate("UPDATE pedidos SET costo_final=" + valor + " where id=" + id + ";");
+            if (estado == 1) {
+                System.out.println("Se ingresó el registro de manera exitosa");
+            } else {
+                System.out.println("Ocurrió un problema al ingresar el registro");
+            }
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+        }
+    }
+    public void modificarEstadoPedido(int id, String estadoPedido) {
+
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            int estado = s.executeUpdate("UPDATE pedidos SET estado='" + estadoPedido + "' where id=" + id + ";");
             if (estado == 1) {
                 System.out.println("Se ingresó el registro de manera exitosa");
             } else {
@@ -67,7 +129,7 @@ public class Pedido extends Conexion {
         this.conectar();
         try {
             this.s = this.connection.createStatement();
-            int estado = s.executeUpdate("INSERT INTO pedidos (costo_final) VALUES ('" + -100 + "');");
+            int estado = s.executeUpdate("INSERT INTO pedidos (costo_final,estado) VALUES ('" + -100 + "','ESPERA');");
             int idPedido = obtenerIDUltimoPlato();
             if (estado == 1) {
                 System.out.println("Se ingresó el registro de manera exitosa");
@@ -80,6 +142,21 @@ public class Pedido extends Conexion {
             System.out.println("Error de conexion");
         }
         return -1;
+    }
+    
+    public void eliminarPedidosInvalidos(){
+        this.conectar();
+        try {
+            this.s = this.connection.createStatement();
+            int estado = s.executeUpdate("DELETE FROM pedidos where costo_final = -100;");
+            if (estado == 1) {
+                System.out.println("Se ingresó el registro de manera exitosa");
+            } else {
+                System.out.println("Ocurrió un problema al ingresar el registro");
+            }
+        } catch (Exception e) {
+            System.out.println("Error de conexion");
+        }
     }
 
 }
