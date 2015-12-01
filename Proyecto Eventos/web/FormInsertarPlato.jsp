@@ -15,10 +15,10 @@
     <body>
         <h1>Insertar plato</h1>
         <form action="ControladorInsertarPlato" method="">
-                <p>descripcion: <input type="text" name="descripcion" id="descripcion"/></p>
-                <p>nombre: <input type="text" name="nombre" id="nombre"/></p>
-                <p>precio: <input type="number" name="precio" id="precio"/></p>
-                <p>ingredientes: <input type="text" name="ingredientes" id="ingredientes"/></p>
+                <p>descripcion: <input type="text" name="descripcion" id="descripcion" required/></p>
+                <p>nombre: <input type="text" name="nombre" id="nombre" required/></p>
+                <p>precio: <input type="number" name="precio" id="precio" required/></p>
+                <p>ingredientes: <input type="text" name="ingredientes" id="ingredientes" required/></p>
                 <p><input type="submit" name="ingresar" id="ingresar"/></p>
         </form>
     </body>

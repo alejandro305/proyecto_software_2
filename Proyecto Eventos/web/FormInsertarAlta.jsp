@@ -15,9 +15,9 @@
     <body>
         <h1>Insertar insumo</h1>
         <form action="ControladorInsertarAlta" method="">
-                <p>insumo: <input type="number" name="insumo" id="insumo"/></p>
-                <p>cantidad: <input type="number" name="cantidad" id="cantidad"/></p>
-                <p>precio: <input type="number" name="precio" id="precio"/></p>
+                <p>insumo: <input type="number" name="insumo" id="insumo" required/></p>
+                <p>cantidad: <input type="number" name="cantidad" id="cantidad" required/></p>
+                <p>precio: <input type="number" name="precio" id="precio" required/></p>
                 <p><input type="submit" name="ingresar" id="ingresar"/></p>
         </form>
     </body>
