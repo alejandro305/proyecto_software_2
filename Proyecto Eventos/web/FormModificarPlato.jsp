@@ -18,8 +18,8 @@
                 <p>id: <input type="number" name="id" id="id" required/></p>
                 <p>descripcion: <input type="text" name="descripcion" id="descripcion" required/></p>
                 <p>nombre: <input type="text" name="nombre" id="nombre" required/></p>
-                <p><input type="number" name="precio" id="precio" required/></p>
-                <p><input type="text" name="ingredientes" id="ingredientes" required/></p>
+                <p>precio: <input type="number" name="precio" id="precio" required/></p>
+                <p>ingredientes: <input type="text" name="ingredientes" id="ingredientes" required/></p>
                 <p><input type="submit" name="modificar" id="modificar"/></p>
         </form>
     </body>

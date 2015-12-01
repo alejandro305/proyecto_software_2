@@ -32,7 +32,7 @@ public class ControladorListarPedidos extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Pedido pedido = new Pedido();
-        String tabla = pedido.listarPedidosPendientes();
+        String tabla = pedido.listarPedidos();
         response.getWriter().write(tabla);
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */

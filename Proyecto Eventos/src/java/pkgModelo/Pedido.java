@@ -18,7 +18,7 @@ public class Pedido extends Conexion {
         super();
     }
 
-    public String listarPedidosPendientes() {
+    public String listarPedidos() {
         String tabla = "";
         this.conectar();
         try {
@@ -107,9 +107,9 @@ public class Pedido extends Conexion {
             this.s = this.connection.createStatement();
             int estado = s.executeUpdate("UPDATE pedidos SET costo_final=" + valor + " where id=" + id + ";");
             if (estado == 1) {
-                System.out.println("Se ingresó el registro de manera exitosa");
+                System.out.println("Se actualizo el registro de manera exitosa");
             } else {
-                System.out.println("Ocurrió un problema al ingresar el registro");
+                System.out.println("Ocurrió un problema al actualizar el registro");
             }
         } catch (Exception e) {
             System.out.println("Error de conexion");
@@ -123,9 +123,9 @@ public class Pedido extends Conexion {
             this.s = this.connection.createStatement();
             int estado = s.executeUpdate("UPDATE pedidos SET estado='" + estadoPedido + "' where id=" + id + ";");
             if (estado == 1) {
-                System.out.println("Se ingresó el registro de manera exitosa");
+                System.out.println("Se actualizo el registro de manera exitosa");
             } else {
-                System.out.println("Ocurrió un problema al ingresar el registro");
+                System.out.println("Ocurrió un problema al actualizar el registro");
             }
         } catch (Exception e) {
             System.out.println("Error de conexion");

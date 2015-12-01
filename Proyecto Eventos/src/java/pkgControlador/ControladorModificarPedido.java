@@ -35,7 +35,7 @@ public class ControladorModificarPedido extends HttpServlet {
         int operacion = Integer.parseInt(request.getParameter("operacion"));
         Pedido pedido = new Pedido();
         if (operacion == 1) {
-            String tabla = pedido.listarPedidosPendientes();
+            String tabla = pedido.listarPedidos();
             response.getWriter().write(tabla);
         } else if (operacion == 2) {
             LinkedList<Integer> ids = pedido.listarIdentificadoresDePedidos();

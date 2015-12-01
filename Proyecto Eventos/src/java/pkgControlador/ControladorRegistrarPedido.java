@@ -37,8 +37,7 @@ public class ControladorRegistrarPedido extends HttpServlet {
         Plato plato = new Plato();
         Pedido pedido = new Pedido();
         if (total == -1) {
-            Pedido pedidoEnBlanco = new Pedido();
-            int id = pedidoEnBlanco.ingresarBlancoObteniedoId();
+            int id = pedido.ingresarBlancoObteniedoId();
             response.getWriter().write(id + "");
             System.out.println(id);
         } else if (total == -2) {

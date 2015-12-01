@@ -8,17 +8,22 @@
 $(document).ready(
         function () {
             $('#ingresar').click(function () {
-                nombre = $('#nombre').val();
-                medida = $('#medida').val();
+                var nombre = $('#nombre').val();
+                var medida = $('#medida').val();
                 //alert(nombre+" "+ medida);
-                $.ajax({
-                    data: {nombre: nombre, medida: medida},
-                    url: 'PruebaControladorInsertarInsumo',
-                    type: 'post',
-                    success: function (response) {
-                        location.reload();
-                    }
-                });
+                if(nombre != "" && medida != ""){
+                    
+                    $.ajax({
+                        data: {nombre: nombre, medida: medida},
+                        url: 'PruebaControladorInsertarInsumo',
+                        type: 'post',
+                        success: function (response) {
+                            location.reload();
+                        }
+                    });
+                }else{
+                    alert("Debe rellena todos los campos");
+                }
             });
         }
 );

@@ -16,27 +16,35 @@ $(document).ready(function () {
                         $('#idsPedidos').html(response);
                     }
                 });
-
             }
         });
-
     }
     cargarComponentes();
-    
-    $('#modificarValor').click(function (){
+
+    $('#modificarValor').click(function () {
         var nuevoValor = $('#txtNuevoValor').val();
         var identificador = $('#cmbIDpedidos').val();
-        if(nuevoValor != "" && identificador != ""){
-            var id = parseInt(identificador);
-            $.ajax({
-                data: {operacion: 3, id: id, valor: nuevoValor},
-                url: 'ControladorModificarPedido',
-                type: 'post',
-                success: function (response) {
-                    //alert(response);
-                    cargarComponentes();
-                }
-            });
+
+        if (nuevoValor != "" && identificador != "") {
+            var nval = parseInt(nuevoValor);
+            //alert(nval);
+            if (nval > -1) {
+                var id = parseInt(identificador);
+                $.ajax({
+                    data: {operacion: 3, id: id, valor: nuevoValor},
+                    url: 'ControladorModificarPedido',
+                    type: 'post',
+                    success: function (response) {
+                        //alert(response);
+                        cargarComponentes();
+                    }
+                });
+            }else{
+                alert("El nuevo valor no puede ser negativo");
+            }
+
+        } else {
+            alert("Debe llenar todos los campos");
         }
     });
 });
