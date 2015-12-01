@@ -34,19 +34,25 @@ $(document).ready(function () {
         var nombrePlato = $("#cmbPlatos").val();
         var cantidad = $("#cantidad").val();
         if (nombrePlato != "" && cantidad != "") {
-            $.ajax({
-                data: {total: 0, idPerdido: idPedido, nombrePlato: nombrePlato, cantidad: cantidad},
-                url: 'ControladorRegistrarPedido',
-                type: 'post',
-                success: function (response) {
-                    var valor = parseInt(response);
-                    var datos = nombrePlato + "   " + cantidad + "    $" + valor + "</br>";
-                    $('#platosSeleccionados').append(datos);
-                    valorTotalPedido = valorTotalPedido + valor;
-                    $("#valorPedido").html('<h1>TOTAL: $' + valorTotalPedido + '</h1>');
-                }
-            });
-        }else{
+            var cant = parseInt(cantidad);
+            if (cant > 0) {
+                $.ajax({
+                    data: {total: 0, idPerdido: idPedido, nombrePlato: nombrePlato, cantidad: cantidad},
+                    url: 'ControladorRegistrarPedido',
+                    type: 'post',
+                    success: function (response) {
+                        var valor = parseInt(response);
+                        var datos = nombrePlato + "   " + cantidad + "    $" + valor + "</br>";
+                        $('#platosSeleccionados').append(datos);
+                        valorTotalPedido = valorTotalPedido + valor;
+                        $("#valorPedido").html('<h1>TOTAL: $' + valorTotalPedido + '</h1>');
+                    }
+                });
+            } else {
+                alert("La cantidad debe ser mayor a 0");
+            }
+
+        } else {
             alert("Debe llenar todos los campos");
         }
 

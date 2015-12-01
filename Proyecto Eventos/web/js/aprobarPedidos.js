@@ -37,6 +37,8 @@ $(document).ready(function () {
                     cargarComponentes();
                 }
             });
+        } else {
+            alert("Seleccione el identificador del pedido que desea aproobar o denegar");
         }
     });
 
@@ -53,6 +55,8 @@ $(document).ready(function () {
                     cargarComponentes();
                 }
             });
+        } else {
+            alert("Seleccione el identificador del pedido que desea aproobar o denegar");
         }
     });
 });
